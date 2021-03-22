@@ -30,7 +30,7 @@ namespace Inlämningsuppgift1
                 {
                     var context = services.GetRequiredService<eventsDbContext>();
                     context.Database.EnsureCreated();
-                    // DbInitializer.Initialize(context);
+                    context.Seed();
                 }
                 catch (Exception ex)
                 {
