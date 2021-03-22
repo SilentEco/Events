@@ -8,7 +8,7 @@ namespace Inlämningsuppgift1.Models
     public class Event
     {
         public int eventID { get; set; }
-        public int organizer_id { get; set; }
+        public int organizerID { get; set; }
         public string description { get; set; }
         public string place { get; set; }
         public string adress { get; set; }

@@ -17,16 +17,10 @@ namespace Inlämningsuppgift1.Data
 
         public void Seed()
         {
-            this.Database.EnsureCreated();
-            if (this.Event.Any())
-            {
-                return;
-            }
-
             this.Event.AddRange(new List<Models.Event>()
             {
                 new Models.Event() { 
-                    organizer_id=1,
+                    organizerID=1,
                     description="Detta är en beskrivning",
                     place="Halmstad",
                     adress="Hvitfeldtsgatan 26a",
