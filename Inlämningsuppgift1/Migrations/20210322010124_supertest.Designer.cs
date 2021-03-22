@@ -3,14 +3,16 @@ using Inlämningsuppgift1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Inlämningsuppgift1.Migrations
 {
     [DbContext(typeof(eventsDbContext))]
-    partial class Inlämningsuppgift1ContextModelSnapshot : ModelSnapshot
+    [Migration("20210322010124_supertest")]
+    partial class supertest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

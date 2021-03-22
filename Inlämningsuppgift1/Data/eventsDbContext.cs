@@ -17,6 +17,7 @@ namespace Inlämningsuppgift1.Data
 
         public void Seed()
         {
+            this.Event.RemoveRange();
             this.Event.AddRange(new List<Models.Event>()
             {
                 new Models.Event() { 
