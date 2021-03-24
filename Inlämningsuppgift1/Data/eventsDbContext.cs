@@ -14,25 +14,39 @@ namespace Inlämningsuppgift1.Data
         {
         }
 
-        public DbSet<Models.Event> Event { get; set; }
+        public DbSet<Event> Event { get; set; }
+        public DbSet<Organizer> Organizer { get; set; }
+        public DbSet<Attendee> Attendee { get; set; }
 
         public void Seed()
         {
-            this.Database.EnsureCreated();
-            if (this.Event.Any())
+            Database.EnsureCreated();
+
+            RemoveRange(Event);
+            RemoveRange(Organizer);
+            RemoveRange(Attendee);
+
+            //this.Organizer.Add(new Organizer() { name = "hej" });
+
+            Event.AddRange(new List<Event>()
             {
-                return;
-            }
-            this.Event.AddRange(new List<Models.Event>()
-            {
-                new Models.Event() { 
-                    description="Detta är en beskrivning",
-                    place="Halmstad",
-                    adress="Hvitfeldtsgatan 26a",
-                    date=2021-03-21,
-                    spots_available=30}
-            });
-            this.SaveChanges();
+                new Event() {
+                    description="Hockey match",
+                    place="Halmstad Arena",
+                    adress="Arenavägen 1",
+                    date=2021-04-22,
+                    spots_available=302},
+
+            //organizer=this.Organizer.Where().FirstOrDefault()},
+            new Event() {
+                    description="Fotbolls match",
+                    place="Halmstad Arena",
+                    adress="Arenavägen 1",
+                    date=2021-04-2,
+                    spots_available=302
+                //organizer=org}
+            } });
+            SaveChanges();
         }
     }
 }
