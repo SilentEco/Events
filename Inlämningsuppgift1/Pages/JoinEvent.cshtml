@@ -1,0 +1,49 @@
+﻿@page
+@model Inlämningsuppgift1.Pages.JoinEventModel
+
+@{
+    ViewData["Title"] = "JoinEvent";
+}
+
+<h1>JoinEvent</h1>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Event.description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.place)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Event.place)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.adress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Event.adress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Event.date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.spots_available)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Event.spots_available)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Event.eventID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

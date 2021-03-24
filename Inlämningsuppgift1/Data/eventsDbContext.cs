@@ -9,7 +9,7 @@ namespace Inlämningsuppgift1.Data
 {
     public class eventsDbContext : DbContext
     {
-        public eventsDbContext (DbContextOptions<eventsDbContext> options)
+        public eventsDbContext(DbContextOptions<eventsDbContext> options)
             : base(options)
         {
         }
@@ -28,24 +28,80 @@ namespace Inlämningsuppgift1.Data
 
             //this.Organizer.Add(new Organizer() { name = "hej" });
 
+            Attendee.AddRange(new List<Attendee>()
+            {
+                new Attendee()
+                {
+                    name="Kristopher",
+                    email="kristopher@fakemail.com",
+                    phone_number="0721234567"
+                },
+                new Attendee()
+                {
+                    name="Jimmy-John",
+                    email="jimmy.j@fakemail.com",
+                    phone_number="469128746"
+                },
+                new Attendee()
+                {
+                    name="Greta",
+                    email="savetheplanet@fakemail.com",
+                    phone_number="085559713"
+                },
+                new Attendee()
+                {
+                    name="Snobben",
+                    email="waliwasika@fakemail.com",
+                    phone_number="0736119488"
+                },
+                new Attendee()
+                {
+                    name="Tarzan",
+                    email="janenme@fakemail.com",
+                    phone_number="0384562199"
+                }
+            });
+            SaveChanges();
+            Organizer.AddRange(new List<Organizer>()
+            {
+                new Organizer()
+                {
+                    name="Cool Events 4 All",
+                    email="ce4a@fakemail.com",
+                    phone_number="06337388"
+                },
+                new Organizer()
+                {
+                    name="Sports Center",
+                    email="sport-center@fakemail.com",
+                    phone_number="4672123667"
+                },
+                new Organizer()
+                {
+                    name="Real Event Promise",
+                    email="totally_real@fakemail.com",
+                    phone_number="123456789"
+                }
+            });
+            SaveChanges();
             Event.AddRange(new List<Event>()
             {
-                new Event() {
-                    description="Hockey match",
-                    place="Halmstad Arena",
-                    adress="Arenavägen 1",
-                    date=2021-04-22,
-                    spots_available=302},
-
-            //organizer=this.Organizer.Where().FirstOrDefault()},
             new Event() {
-                    description="Fotbolls match",
-                    place="Halmstad Arena",
-                    adress="Arenavägen 1",
-                    date=2021-04-2,
-                    spots_available=302
-                //organizer=org}
-            } });
+             description="Hockey match",
+             place="Halmstad Arena",
+             adress="Arenavägen 1",
+             date=2021-04-22,
+             spots_available=302,
+             organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
+            },
+            new Event() {
+             description="Fotbolls match",
+             place="Halmstad Arena",
+             adress="Arenavägen 1",
+             date=2021-04-2,
+             spots_available=302
+            } }) ;
+
             SaveChanges();
         }
     }

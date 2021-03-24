@@ -10,11 +10,11 @@ using Inlämningsuppgift1.Models;
 
 namespace Inlämningsuppgift1.Pages
 {
-    public class EventsModel : PageModel
+    public class MyEventsModel : PageModel
     {
         private readonly Inlämningsuppgift1.Data.eventsDbContext _context;
 
-        public EventsModel(Inlämningsuppgift1.Data.eventsDbContext context)
+        public MyEventsModel(Inlämningsuppgift1.Data.eventsDbContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace Inlämningsuppgift1.Pages
 
         public async Task OnGetAsync()
         {
-            Event = await _context.Event.Include(@event => @event.organizer).ToListAsync();
+            Event = await _context.Event.ToListAsync();
         }
     }
 }
