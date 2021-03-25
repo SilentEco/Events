@@ -2,14 +2,12 @@
 @model Inlämningsuppgift1.Pages.JoinEventModel
 
 @{
-    ViewData["Title"] = "JoinEvent";
+    ViewData["Title"] = Model.Event.description;
 }
 
-<h1>JoinEvent</h1>
+<h1>@Model.Event.description</h1>
 
-<div>
-    <h4>Event</h4>
-    <hr />
+<div class="join">
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Event.description)
@@ -43,7 +41,11 @@
         </dd>
     </dl>
 </div>
+
+<form method="post" action="">
+    <input type="submit" asp-for="AddEvent" value="JOIN" class="btn-primary" />
+</form>
+
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Event.eventID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Events">Back to List</a>
 </div>

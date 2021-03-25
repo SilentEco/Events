@@ -95,13 +95,21 @@ namespace Inlämningsuppgift1.Data
              organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
             },
             new Event() {
+             description="Monster Truck",
+             place="Halmstad Arena",
+             adress="Arenavägen 1",
+             date=2021-04-22,
+             spots_available=302,
+             organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
+            },
+            new Event() {
              description="Fotbolls match",
              place="Halmstad Arena",
              adress="Arenavägen 1",
              date=2021-04-2,
-             spots_available=302
-            } }) ;
-
+             spots_available=302,
+             organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
+            } });
             SaveChanges();
         }
     }

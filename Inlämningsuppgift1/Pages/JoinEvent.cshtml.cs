@@ -21,6 +21,10 @@ namespace Inlämningsuppgift1.Pages
 
         public Event Event { get; set; }
 
+        [BindProperty]
+        public Event AddEvent { get; set; }
+
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -36,5 +40,15 @@ namespace Inlämningsuppgift1.Pages
             }
             return Page();
         }
+
+        public async Task<IActionResult> OnPostAsync() 
+        {
+            Event = await _context.Event.FirstOrDefaultAsync();
+            await _context.Event.AddAsync(AddEvent);
+            await _context.SaveChangesAsync();
+            return Page();
+        }
+        
     }
 }
+
