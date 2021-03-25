@@ -44,7 +44,7 @@ namespace Inlämningsuppgift1.Pages
         public async Task<IActionResult> OnPostAsync() 
         {
             Event = await _context.Event.FirstOrDefaultAsync();
-            await _context.Event.AddAsync(AddEvent);
+            await _context.AddAsync(AddEvent);
             await _context.SaveChangesAsync();
             return Page();
         }
