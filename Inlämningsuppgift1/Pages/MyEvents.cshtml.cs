@@ -19,11 +19,11 @@ namespace Inlämningsuppgift1.Pages
             _context = context;
         }
 
-        public IList<Event> Event { get;set; }
+        public Attendee Attendee { get;set; }
 
         public async Task OnGetAsync()
         {
-            Event = await _context.Event.ToListAsync();
+            Attendee = await _context.Attendee.Where(a => a.attendeeID == 1).Include(e => e.events).FirstOrDefaultAsync();
         }
     }
 }

@@ -20,18 +20,21 @@ namespace Inlämningsuppgift1.Data
 
         public void Seed()
         {
-            Database.EnsureCreated();
+            this.Database.EnsureCreated();
 
-            RemoveRange(Event);
-            RemoveRange(Organizer);
-            RemoveRange(Attendee);
+            if (this.Event.Any() ||
+                this.Attendee.Any() ||
+                this.Organizer.Any())
+            {
+                return;
+            }
 
-            //this.Organizer.Add(new Organizer() { name = "hej" });
 
             Attendee.AddRange(new List<Attendee>()
             {
                 new Attendee()
                 {
+                    
                     name="Kristopher",
                     email="kristopher@fakemail.com",
                     phone_number="0721234567"

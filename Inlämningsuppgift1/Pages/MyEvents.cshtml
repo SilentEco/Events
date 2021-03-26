@@ -2,34 +2,31 @@
 @model Inlämningsuppgift1.Pages.MyEventsModel
 
 @{
-    ViewData["Title"] = "My Events";
+    ViewData["Title"] = "MyEvents";
 }
 
-<h1>My Events</h1>
+<h1>MyEvents</h1>
 
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Event[0].description)
+                @Html.DisplayNameFor(model => model.Attendee.name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Event[0].place)
+                @Html.DisplayNameFor(model => model.Attendee.email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Event[0].adress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event[0].date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event[0].spots_available)
+                @Html.DisplayNameFor(model => model.Attendee.phone_number)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Event) {
+@foreach (var item in Model.Attendee.events) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.description)
@@ -41,13 +38,11 @@
                 @Html.DisplayFor(modelItem => item.adress)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.date)
+                @Html.DisplayFor(modelItem => item.adress)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.spots_available)
-            </td>
-            <td>
-                <a asp-page="./Delete" asp-route-id="@item.eventID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.eventID">Home</a> |
+
             </td>
         </tr>
 }

@@ -14,5 +14,6 @@ namespace Inlämningsuppgift1.Models
         public string adress { get; set; }
         public int date { get; set; }
         public int spots_available { get; set; }
+        public List<Attendee> attendee { get; set; }
     }
 }

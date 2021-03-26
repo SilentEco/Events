@@ -21,10 +21,6 @@ namespace Inlämningsuppgift1.Pages
 
         public Event Event { get; set; }
 
-        [BindProperty]
-        public Event AddEvent { get; set; }
-
-
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -41,12 +37,19 @@ namespace Inlämningsuppgift1.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync() 
+        [BindProperty]
+        public Event AddEvent { get; set; }
+        public async Task<IActionResult> OnPostAsync(int? id) 
         {
-            Event = await _context.Event.FirstOrDefaultAsync();
-            await _context.AddAsync(AddEvent);
+
+            var attendee = await _context.Attendee.Where(a => a.attendeeID == 1).Include(e => e.events).FirstOrDefaultAsync();
+
+            var join = await _context.Event.Where(e => e.eventID == id).FirstOrDefaultAsync();
+
+            attendee.events.Add(join);
             await _context.SaveChangesAsync();
-            return Page();
+            return RedirectToPage("/MyEvents");
+
         }
         
     }
