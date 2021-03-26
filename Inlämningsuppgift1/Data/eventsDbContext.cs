@@ -93,25 +93,33 @@ namespace Inlämningsuppgift1.Data
              description="Hockey match",
              place="Halmstad Arena",
              adress="Arenavägen 1",
-             date=2021-04-22,
+             date="2021-04-22",
              spots_available=302,
-             organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
+             organizer = Organizer.Where(o => o.name=="Sports Center").FirstOrDefault()
             },
             new Event() {
              description="Monster Truck",
-             place="Halmstad Arena",
-             adress="Arenavägen 1",
-             date=2021-04-22,
-             spots_available=302,
+             place="Bosses Death Globe",
+             adress="Brinnvägen",
+             date="2026-06-06",
+             spots_available=666,
+             organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
+            },
+            new Event() {
+             description="Tomatkastnings krig",
+             place="Italy plaza",
+             adress="Pizza pasta st.",
+             date="2023-05-2",
+             spots_available=1002,
              organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
             },
             new Event() {
              description="Fotbolls match",
              place="Halmstad Arena",
              adress="Arenavägen 1",
-             date=2021-04-2,
-             spots_available=302,
-             organizer = Organizer.Where(o => o.name=="Cool Events 4 All").FirstOrDefault()
+             date="2021-04-12",
+             spots_available=30,
+             organizer = Organizer.Where(o => o.name=="Sports Center").FirstOrDefault()
             } });
             SaveChanges();
         }

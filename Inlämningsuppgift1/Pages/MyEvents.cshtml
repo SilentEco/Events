@@ -2,27 +2,26 @@
 @model Inlämningsuppgift1.Pages.MyEventsModel
 
 @{
-    ViewData["Title"] = "MyEvents";
+    ViewData["Title"] = "My Events";
 }
 
-<h1>MyEvents</h1>
+<h1>My Events</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Attendee.name)
+                Were
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Attendee.email)
+                Where
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Attendee.phone_number)
+                Adress
             </th>
-            <th></th>
+            <th>
+                Date
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -38,10 +37,10 @@
                 @Html.DisplayFor(modelItem => item.adress)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.adress)
+                @Html.DisplayFor(modelItem => item.date)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.eventID">Home</a> |
+                <a asp-page="./Events" asp-route-id="@item.eventID">Back to List</a>
 
             </td>
         </tr>
