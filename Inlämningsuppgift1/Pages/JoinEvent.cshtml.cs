@@ -14,7 +14,8 @@ namespace Inlämningsuppgift1.Pages
     {
         private readonly Inlämningsuppgift1.Data.eventsDbContext _context;
 
-        public JoinEventModel(Inlämningsuppgift1.Data.eventsDbContext context)
+
+    public JoinEventModel(Inlämningsuppgift1.Data.eventsDbContext context)
         {
             _context = context;
         }
